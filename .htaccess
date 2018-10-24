@@ -1,0 +1,21 @@
+# Original:  http://example.com/image.php?size=250x850&type=jpg&bg=ff8800&color=000000
+# Rewritten: http://example.com/250x850/jpg/ff8800/000000
+RewriteEngine On
+
+#RewriteRule ^([A-Za-z0-9-]+)/?$ image.php?size=$1 [L]
+#RewriteRule ^([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/?$ image.php?size=$1&type=$2 [L]
+#RewriteRule ^([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/?$ image.php?size=$1&type=$2&bg=$3 [L]
+#RewriteRule ^([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/?$ image.php?size=$1&type=$2&bg=$3&color=$4 [L]
+
+RewriteRule ^gallery/([0-9]+)/?$ gallery.php?page=$1 [L]
+RewriteRule ^gallery/?$ gallery.php [L]
+
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>
+
+deny from 5.188.211.13
+deny from 5.188.211.21
+deny from 5.188.211.10
+deny from 5.188.211.0/24
