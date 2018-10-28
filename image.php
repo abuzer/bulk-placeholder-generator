@@ -1,16 +1,5 @@
 <?php
 
-$servername = "localhost";
-$username = "themehea_place";
-$password = "google.123";
-$dbname = "themehea_placeholders";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
 
 
 $link = '';
@@ -350,4 +339,3 @@ function generatePlaceholder($file, $height, $width){
 
 unset($_POST);
 unset($_FILES);
-$conn->close();
